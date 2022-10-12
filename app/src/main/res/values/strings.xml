@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Contato Médico</string>
     <string name="home"> Página Inicial</string>
+    <string name="doctors_page_title">Médicos</string>
+    <string name="specialities_page_title">Especialidades</string>
+    <string name="app_description">Aplicativo para gestão dos médicos da Fedmed</string>
 </resources>
