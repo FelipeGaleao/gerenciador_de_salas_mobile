@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ConsultaMedica</string>
+    <string name="app_name">Contato Médico</string>
+    <string name="home"> Página Inicial</string>
 </resources>
