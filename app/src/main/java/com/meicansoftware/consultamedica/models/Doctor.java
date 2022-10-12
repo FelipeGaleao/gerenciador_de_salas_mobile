@@ -7,7 +7,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = Specialty.class, parentColumns = "idEspecialidade", childColumns = "id", onDelete = CASCADE))
+@Entity(tableName = "doctors", foreignKeys = @ForeignKey(entity = Specialty.class, parentColumns = "id", childColumns = "idEspecialidade", onDelete = CASCADE))
 public class Doctor {
     @PrimaryKey
     public int id;
