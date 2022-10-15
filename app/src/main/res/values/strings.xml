@@ -4,4 +4,6 @@
     <string name="doctors_page_title">Médicos</string>
     <string name="specialities_page_title">Especialidades</string>
     <string name="app_description">Aplicativo para gestão dos médicos da Fedmed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_specialities"
+    app:startDestination="@id/home_specialities">
+
+    <fragment
+        android:id="@+id/home_specialities"
+        android:name="com.meicansoftware.consultamedica.pages.specialities.fragments.specialities"
+        android:label="home_specialities" >
+        <action
+            android:id="@+id/action_home_specialities_to_add_specialities"
+            app:destination="@id/add_specialities" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_specialities"
+        android:name="com.meicansoftware.consultamedica.pages.specialities.fragments.add_specialities"
+        android:label="add_specialities" />
+
+</navigation>

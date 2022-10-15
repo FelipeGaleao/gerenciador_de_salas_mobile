@@ -33,7 +33,9 @@
                 android:id="@+id/fragmentContainerView"
                 android:name="com.meicansoftware.consultamedica.pages.doctors.fragments.doctors"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:navGraph="@navigation/nav_doctors"
+                />
 
 
             <!--    Your code here -->
