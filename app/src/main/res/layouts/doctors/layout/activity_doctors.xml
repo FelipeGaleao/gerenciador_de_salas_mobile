@@ -29,11 +29,13 @@
                 app:subtitleTextColor="#0A0A0A"
                 app:titleTextColor="#111111" />
 
-
-            <TextView
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView"
+                android:name="com.meicansoftware.consultamedica.pages.doctors.fragments.doctors"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Hello world"/>
+                android:layout_height="wrap_content" />
+
+
             <!--    Your code here -->
 
 
