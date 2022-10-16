@@ -34,14 +34,46 @@
             app:placeholderText="Insira o nome do médico">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_doctor_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Endereço do médico"
+            app:placeholderText="Insira o endereço">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_doctor_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefone do médico"
+            app:placeholderText="Insira o telefone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_doctor_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner_specialities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_save_doctor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
