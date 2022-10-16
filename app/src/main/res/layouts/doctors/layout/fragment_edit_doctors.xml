@@ -89,5 +89,14 @@
             android:background="#A52929"
             android:text="Salvar médico" />
 
+        <Button
+            android:id="@+id/btn_delete_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E11F1F"
+            android:backgroundTint="#B10C0C"
+            android:text="Apagar médico" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

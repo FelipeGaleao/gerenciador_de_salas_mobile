@@ -1,6 +1,7 @@
 package com.meicansoftware.consultamedica.dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -23,4 +24,7 @@ public interface DoctorDao {
 
     @Query("SELECT * FROM Doctors WHERE id = :doctorsId")
     List<Doctor> loadAllById(int doctorsId);
+
+    @Delete
+    public void deleteDoctor(Doctor doctor);
 }

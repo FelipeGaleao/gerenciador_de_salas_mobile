@@ -68,7 +68,9 @@ public class edit_doctors extends Fragment {
 
         db = ContatoMedicoDatabase.getDatabase(getActivity().getApplicationContext());
 
-        Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_save_doctor);
+        Button btnSaveDoctor = getActivity().findViewById(R.id.btn_save_doctor);
+        Button btnDeleteDoctor = getActivity().findViewById(R.id.btn_delete_doctor);
+
         EditText edtNameDoctor = getActivity().findViewById(R.id.edt_doctor_name);
         EditText edtPhoneDoctor = getActivity().findViewById(R.id.edt_doctor_phone);
         EditText edtAddressDoctor = getActivity().findViewById(R.id.edt_doctor_address);
@@ -101,21 +103,22 @@ public class edit_doctors extends Fragment {
             }
         });
 
-        btnAddNewSpeciality.setOnClickListener(new View.OnClickListener() {
+        String nameDoctor = edtNameDoctor.getText().toString();
+        String phoneDoctor = edtPhoneDoctor.getText().toString();
+        String addressDoctor = edtAddressDoctor.getText().toString();
+
+        btnSaveDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("e", String.valueOf(specialitySelected));
 
-                String nameDoctor = edtNameDoctor.getText().toString();
-                String phoneDoctor = edtPhoneDoctor.getText().toString();
-                String addressDoctor = edtAddressDoctor.getText().toString();
+
 
                 if ((!nameDoctor.equals("")) & (!phoneDoctor.equals("")) & (!addressDoctor.equals(""))) {
                     Doctor doctor = new Doctor(getArguments().getInt("doctor_id"), specialitySelected, nameDoctor, phoneDoctor, addressDoctor);
 
                     try {
                         db.doctorDao().updateDoctors(doctor);
-                        Log.d("e", nameDoctor);
                         Toast.makeText(getActivity(), "Médico editado com sucesso", Toast.LENGTH_SHORT).show();
                         NavHostFragment.findNavController(edit_doctors.this).navigate(R.id.action_edit_doctors_to_page_doctors);
                     } catch (SQLiteConstraintException e) {
@@ -128,6 +131,21 @@ public class edit_doctors extends Fragment {
             }
         });
 
+        btnDeleteDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Doctor doctor = new Doctor(getArguments().getInt("doctor_id"), specialitySelected, nameDoctor, phoneDoctor, addressDoctor);
+
+                try {
+                    db.doctorDao().deleteDoctor(doctor);
+                    Toast.makeText(getActivity(), "Médico editado com sucesso", Toast.LENGTH_SHORT).show();
+                    NavHostFragment.findNavController(edit_doctors.this).navigate(R.id.action_edit_doctors_to_page_doctors);
+                } catch (SQLiteConstraintException e) {
+                    Toast.makeText(getActivity(), "Erro ao tentar editar um médico", Toast.LENGTH_SHORT).show();
+                    Log.d("e", e.toString());
+                }
+            }
+        });
     }
 
 
