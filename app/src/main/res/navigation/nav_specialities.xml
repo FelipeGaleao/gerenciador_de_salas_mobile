@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_home_specialities_to_add_specialities"
             app:destination="@id/add_specialities" />
+        <action
+            android:id="@+id/action_home_specialities_to_edit_specialities"
+            app:destination="@id/edit_specialities" />
     </fragment>
     <fragment
         android:id="@+id/add_specialities"
@@ -18,6 +21,14 @@
         android:label="add_specialities" >
         <action
             android:id="@+id/action_add_specialities_to_home_specialities"
+            app:destination="@id/home_specialities" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_specialities"
+        android:name="com.meicansoftware.consultamedica.pages.specialities.fragments.edit_specialities"
+        android:label="edit_specialities" >
+        <action
+            android:id="@+id/action_edit_specialities_to_home_specialities"
             app:destination="@id/home_specialities" />
     </fragment>
 

@@ -9,12 +9,15 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
 import com.meicansoftware.consultamedica.R;
 import com.meicansoftware.consultamedica.config.ContatoMedicoDatabase;
+import com.meicansoftware.consultamedica.models.Doctor;
 import com.meicansoftware.consultamedica.models.Speciality;
+import com.meicansoftware.consultamedica.pages.doctors.fragments.doctors;
 
 import java.util.List;
 
@@ -82,6 +85,23 @@ public class specialities extends Fragment {
 
         gridSpecialities.setAdapter(adapter);
 
+
+        gridSpecialities.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int cod_medico = i+1;
+
+                Speciality speciality_selected = adapter.getItem(i);
+
+                Bundle b = new Bundle();
+
+                b.putInt("speciality_id", speciality_selected.id);
+                b.putString("speciality_description", speciality_selected.descricao);
+
+                NavHostFragment.findNavController(specialities.this).navigate(R.id.action_home_specialities_to_edit_specialities, b);
+
+            }
+        });
 
 
     }
