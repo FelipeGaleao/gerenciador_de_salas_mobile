@@ -6,6 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.meicansoftware.consultamedica.dao.DoctorDao;
 import com.meicansoftware.consultamedica.dao.SpecialityDao;
 import com.meicansoftware.consultamedica.models.Doctor;
 import com.meicansoftware.consultamedica.models.Speciality;
@@ -24,4 +25,6 @@ public abstract class ContatoMedicoDatabase extends RoomDatabase {
     }
 
     public abstract SpecialityDao specialityDao();
+    public abstract DoctorDao doctorDao();
+
 }

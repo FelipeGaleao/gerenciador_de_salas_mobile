@@ -9,7 +9,14 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "doctors", foreignKeys = @ForeignKey(entity = Speciality.class, parentColumns = "id", childColumns = "idEspecialidade", onDelete = CASCADE))
 public class Doctor {
-    @PrimaryKey
+    public Doctor(int idEspecialidade, String nome, String telefone, String endereco) {
+        this.idEspecialidade = idEspecialidade;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.endereco = endereco;
+    }
+
+    @PrimaryKey(autoGenerate = true)
     public int id;
 
     @ColumnInfo(name = "idEspecialidade")
@@ -24,4 +31,7 @@ public class Doctor {
     @ColumnInfo(name= "endereco")
     public String endereco;
 
+    public Doctor() {
+
+    }
 }

@@ -4,18 +4,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavHostController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import com.meicansoftware.consultamedica.R;
 import com.meicansoftware.consultamedica.config.ContatoMedicoDatabase;
@@ -65,7 +60,7 @@ public class specialities extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
-        Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_new_speciality);
+        Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_new_doctor);
         fillSpecialities();
 
         btnAddNewSpeciality.setOnClickListener(new View.OnClickListener() {
