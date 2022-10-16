@@ -15,6 +15,10 @@
     <fragment
         android:id="@+id/add_specialities"
         android:name="com.meicansoftware.consultamedica.pages.specialities.fragments.add_specialities"
-        android:label="add_specialities" />
+        android:label="add_specialities" >
+        <action
+            android:id="@+id/action_add_specialities_to_home_specialities"
+            app:destination="@id/home_specialities" />
+    </fragment>
 
 </navigation>

@@ -10,8 +10,18 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
 import com.meicansoftware.consultamedica.R;
+import com.meicansoftware.consultamedica.config.ContatoMedicoDatabase;
+import com.meicansoftware.consultamedica.models.Speciality;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +32,7 @@ public class specialities extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
+    private ContatoMedicoDatabase db;
 
     public specialities() {
         // Required empty public constructor
@@ -36,6 +47,8 @@ public class specialities extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        db = ContatoMedicoDatabase.getDatabase(getActivity());
 
 
     }
@@ -53,6 +66,7 @@ public class specialities extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
         Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_new_speciality);
+        fillSpecialities();
 
         btnAddNewSpeciality.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,5 +76,20 @@ public class specialities extends Fragment {
             }
         });
     }
+
+    private void fillSpecialities(){
+
+        GridView gridSpecialities = getActivity().findViewById(R.id.gridview_specialities);
+
+        List<Speciality> specialitiesList = db.specialityDao().getAll();
+
+        specialityAdapter adapter = new specialityAdapter(getActivity(), specialitiesList);
+
+        gridSpecialities.setAdapter(adapter);
+
+
+
+    }
+
 
 }

@@ -34,14 +34,14 @@
             app:placeholderText="Insira o nome da especialidade">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_speciality"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_save_speciality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -49,4 +49,5 @@
             android:text="Salvar especialidade" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
