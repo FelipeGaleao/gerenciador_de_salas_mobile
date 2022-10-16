@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_doctors"
+    app:startDestination="@id/page_doctors">
+
+    <fragment
+        android:id="@+id/page_doctors"
+        android:name="com.meicansoftware.consultamedica.pages.doctors.fragments.doctors"
+        android:label="doctors" >
+        <action
+            android:id="@+id/action_page_doctors_to_add_doctors"
+            app:destination="@id/add_doctors" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_doctors"
+        android:name="com.meicansoftware.consultamedica.pages.doctors.fragments.add_doctors"
+        android:label="add_doctors" >
+        <action
+            android:id="@+id/action_add_doctors_to_page_doctors"
+            app:destination="@id/page_doctors" />
+    </fragment>
+</navigation>

@@ -1,4 +1,4 @@
-package com.meicansoftware.consultamedica;
+package com.meicansoftware.consultamedica.pages.specialities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
@@ -16,10 +16,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
+import com.meicansoftware.consultamedica.MainActivity;
+import com.meicansoftware.consultamedica.R;
 import com.meicansoftware.consultamedica.pages.doctors.Doctors;
-import com.meicansoftware.consultamedica.pages.specialities.Specialities;
 
-public class MainActivity extends AppCompatActivity {
+public class Specialities extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_specialities);
         setUpToolbar();
 
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
@@ -41,17 +42,18 @@ public class MainActivity extends AppCompatActivity {
                 {
                     case  R.id.nav_home:
 
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        Intent intent = new Intent(Specialities.this, MainActivity.class);
                         startActivity(intent);
                         break;
 
                     case R.id.page_doctors:
-                        Intent intent1 = new Intent(MainActivity.this , Doctors.class);
+                        Intent intent1 = new Intent(Specialities.this , Doctors.class);
+
                         startActivity(intent1);
                         break;
 
                     case R.id.page_specialities:
-                        Intent intent2 = new Intent(MainActivity.this, Specialities.class);
+                        Intent intent2 = new Intent(Specialities.this, Specialities.class);
                         startActivity(intent2);
                         break;
                 }
