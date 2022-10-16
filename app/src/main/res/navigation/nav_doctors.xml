@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_page_doctors_to_add_doctors"
             app:destination="@id/add_doctors" />
+        <action
+            android:id="@+id/action_page_doctors_to_edit_doctors"
+            app:destination="@id/edit_doctors" />
     </fragment>
     <fragment
         android:id="@+id/add_doctors"
@@ -18,6 +21,14 @@
         android:label="add_doctors" >
         <action
             android:id="@+id/action_add_doctors_to_page_doctors"
+            app:destination="@id/page_doctors" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_doctors"
+        android:name="com.meicansoftware.consultamedica.pages.doctors.fragments.edit_doctors"
+        android:label="edit_doctors" >
+        <action
+            android:id="@+id/action_edit_doctors_to_page_doctors"
             app:destination="@id/page_doctors" />
     </fragment>
 </navigation>

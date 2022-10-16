@@ -6,9 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
@@ -19,6 +21,7 @@ import com.meicansoftware.consultamedica.models.Speciality;
 import com.meicansoftware.consultamedica.pages.specialities.fragments.specialities;
 import com.meicansoftware.consultamedica.pages.specialities.fragments.specialityAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -88,6 +91,25 @@ public class doctors extends Fragment {
 
         gridDoctors.setAdapter(adapter);
 
+        gridDoctors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int cod_medico = i+1;
+
+                Doctor doctor_selected = adapter.getItem(i);
+
+                Bundle b = new Bundle();
+
+                b.putInt("doctor_id", cod_medico);
+                b.putString("doctor_name", doctor_selected.getNome());
+                b.putString("doctor_address", doctor_selected.getEndereco());
+                b.putString("doctor_phone", doctor_selected.getTelefone());
+                b.putInt("doctor_speciality_id", doctor_selected.getId());
+
+                NavHostFragment.findNavController(doctors.this).navigate(R.id.action_page_doctors_to_edit_doctors, b);
+
+            }
+        });
     }
 
 }
