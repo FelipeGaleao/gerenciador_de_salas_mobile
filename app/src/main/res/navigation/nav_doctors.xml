@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/add_doctors"
         android:name="com.meicansoftware.consultamedica.pages.doctors.fragments.add_doctors"
-        android:label="add_doctors" />
+        android:label="add_doctors" >
+        <action
+            android:id="@+id/action_add_doctors_to_page_doctors"
+            app:destination="@id/page_doctors" />
+    </fragment>
 </navigation>
