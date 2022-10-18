@@ -88,7 +88,7 @@ public class add_doctors extends Fragment {
         spinner_especialidades.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            specialitySelected = i+1;
+            specialitySelected = adapter.getItem(i).id;
             }
 
             @Override
