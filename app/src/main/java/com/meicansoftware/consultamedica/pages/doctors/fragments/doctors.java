@@ -94,13 +94,12 @@ public class doctors extends Fragment {
         gridDoctors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int cod_medico = i+1;
 
                 Doctor doctor_selected = adapter.getItem(i);
 
                 Bundle b = new Bundle();
 
-                b.putInt("doctor_id", cod_medico);
+                b.putInt("doctor_id", doctor_selected.getId());
                 b.putString("doctor_name", doctor_selected.getNome());
                 b.putString("doctor_address", doctor_selected.getEndereco());
                 b.putString("doctor_phone", doctor_selected.getTelefone());
