@@ -2,13 +2,23 @@ package com.meicansoftware.consultamedica.pages.home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import com.meicansoftware.consultamedica.R;
+import com.meicansoftware.consultamedica.config.ContatoMedicoDatabase;
+import com.meicansoftware.consultamedica.models.Speciality;
+import com.meicansoftware.consultamedica.pages.specialities.fragments.specialities;
+import com.meicansoftware.consultamedica.pages.specialities.fragments.specialityAdapter;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +35,9 @@ public class Homepage extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ContatoMedicoDatabase db;
+
+
 
     public Homepage() {
         // Required empty public constructor
@@ -50,6 +63,10 @@ public class Homepage extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        db = ContatoMedicoDatabase.getDatabase(getActivity());
+
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -61,6 +78,41 @@ public class Homepage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_main, container, false);
+        return inflater.inflate(R.layout.fragment_homepage, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        fillSpecialities();
+    }
+
+    private void fillSpecialities(){
+
+        GridView gridSpecialities = getActivity().findViewById(R.id.gridview_home_specialities);
+
+        List<Speciality> specialitiesList = db.specialityDao().getAll();
+
+        specialityAdapter adapter = new specialityAdapter(getActivity(), specialitiesList);
+
+        gridSpecialities.setAdapter(adapter);
+
+
+        gridSpecialities.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int cod_medico = adapter.getItem(i).id;
+
+                Speciality speciality_selected = adapter.getItem(i);
+
+                Bundle b = new Bundle();
+
+                b.putInt("speciality_id", speciality_selected.id);
+                b.putString("speciality_description", speciality_selected.descricao);
+
+                NavHostFragment.findNavController(Homepage.this).navigate(R.id.action_home_specialities_to_edit_specialities, b);
+
+            }
+        });
+
+
     }
 }

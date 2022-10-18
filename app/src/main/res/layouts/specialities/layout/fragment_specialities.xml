@@ -9,10 +9,22 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/title_page_speciality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Especialidades"
+            android:textColor="@color/unimed_primary"
+            android:textSize="36dp" />
+
         <GridView
             android:id="@+id/gridview_specialities"
             android:layout_width="match_parent"
-            android:layout_height="500dp" />
+            android:layout_height="500dp"
+            android:numColumns="2" />
 
         <Button
             android:id="@+id/btn_new_doctor"
