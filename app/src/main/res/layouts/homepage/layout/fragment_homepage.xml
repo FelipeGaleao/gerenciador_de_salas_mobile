@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="-356dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -14,38 +17,101 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/text_name_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Maycon"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saudações!"
-                android:textSize="16dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:showDividers="none">
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:id="@+id/text_name_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Maycon"
+                    android:textColor="@color/unimed_primary"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saudações!"
+                    android:textColor="@color/unimed_primary"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="32sp"
+                    android:layout_height="32sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@android:drawable/ic_menu_search" />
+
+                <EditText
+                    android:id="@+id/edt_search_speciality"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Buscar especialidade" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/unimed_primary"
+                    android:ems="10"
+                    android:hint="Buscar por especialidade"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:shadowColor="#BF5959"
+                    android:textColor="@color/unimed_primary"
+                    android:textColorHighlight="#E62A2A"
+                    android:textColorHint="@color/unimed_primary" />
 
-            <GridView
-                android:id="@+id/gridview_home_specialities"
-                android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="2"
+                    android:text="Filtrar"
+                    android:textSize="9sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:numColumns="2" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_name_user2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Especialidades"
+                    android:textColor="@color/unimed_primary"
+                    android:textSize="24dp" />
+
+                <GridView
+                    android:id="@+id/gridview_home_specialities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:numColumns="auto_fit"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:scrollbars="horizontal" >
+
+                </GridView>
+
+            </LinearLayout>
 
         </LinearLayout>
 

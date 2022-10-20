@@ -23,6 +23,9 @@ public interface SpecialityDao {
     @Update
     public void updateSpeciality(Speciality speciality);
 
+    @Query("SELECT * FROM Specialities WHERE descricao LIKE  '%' || :specialityName ||  '%'")
+    List<Speciality> loadBySpecialityDescription(String specialityName);
+
     @Delete
     public void deleteSpeciality(Speciality speciality);
 

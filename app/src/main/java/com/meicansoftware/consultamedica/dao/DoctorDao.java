@@ -25,6 +25,9 @@ public interface DoctorDao {
     @Query("SELECT * FROM Doctors WHERE id = :doctorsId")
     List<Doctor> loadAllById(int doctorsId);
 
+    @Query("SELECT * FROM Doctors WHERE idEspecialidade = :specialityId")
+    List<Doctor> loadAllBySpeciality(int specialityId);
+
     @Delete
     public void deleteDoctor(Doctor doctor);
 }

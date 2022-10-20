@@ -31,9 +31,11 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView3"
-                android:name="com.meicansoftware.consultamedica.pages.home.Homepage"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_home" />
 
 
             <!--    Your code here -->
