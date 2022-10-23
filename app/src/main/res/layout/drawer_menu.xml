@@ -11,7 +11,7 @@
             android:title="@string/doctors_page_title">
         </item>
         <item android:id="@+id/page_specialities"
-            android:icon="@drawable/ic_baseline_smartphone_24"
+            android:icon="@drawable/ic_baseline_policy_24"
             android:title="@string/specialities_page_title">
         </item>
         </group>

@@ -3,41 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/activity_home.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/activity_specialities.xml" value="0.20425724637681159" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/app_bar_home.xml" value="0.1" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/content_home.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/drawer_menu.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/fragment_create.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/fragment_homepage.xml" value="0.18697916666666667" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/fragment_speciality.xml" value="0.17889492753623187" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/header.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/homepage.xml" value="0.17395833333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/list_specialities.xml" value="0.33" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/listview_specialities.xml" value="0.18697916666666667" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/nav_header.xml" value="0.17395833333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/nav_header_home.xml" value="0.25" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/navigation_menu.xml" value="0.17395833333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/toolbar.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/doctors/layout/activity_doctors.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/doctors/layout/fragment_add_doctors.xml" value="0.33" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/doctors/layout/fragment_doctors.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/doctors/layout/fragment_edit_doctors.xml" value="0.18795289855072464" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/doctors/layout/gridview_layout_doctors.xml" value="0.18795289855072464" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/homepage/fragments/layout/fragment_homepage.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/homepage/layout/fragment_homepage.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/homepage/layout/homepage.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/activity_specialities.xml" value="0.17889492753623187" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/fragment_add_speciality.xml" value="0.33" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/fragment_create.xml" value="0.18697916666666667" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/fragment_edit_speciality.xml" value="0.18795289855072464" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/fragment_specialities.xml" value="0.25" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/gridview_layout_specialities.xml" value="0.18697916666666667" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/gridview_specialities.xml" value="0.18697916666666667" />
-        <entry key="..\:/Users/mayco/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/homepage.xml" value="0.15427350427350428" />
-        <entry key="..\:/Users/mayco/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/activity_list_item.xml" value="0.18795289855072464" />
-        <entry key="..\:/Users/mayco/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/list_content.xml" value="0.250868658790827" />
+        <entry key="..\:/Users/CS342370/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/CS342370/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/CS342370/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layout/drawer_menu.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/CS342370/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/homepage/layout/fragment_homepage.xml" value="0.25" />
+        <entry key="..\:/Users/CS342370/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/fragment_getdoctorbyspeciality.xml" value="0.1" />
+        <entry key="..\:/Users/CS342370/AndroidStudioProjects/ConsultaMedica/app/src/main/res/layouts/specialities/layout/fragment_getdoctors.xml" value="0.1" />
       </map>
     </option>
   </component>

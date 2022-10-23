@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.meicansoftware.consultamedica.R;
 import com.meicansoftware.consultamedica.config.ContatoMedicoDatabase;
@@ -32,6 +33,9 @@ import java.util.List;
 public class doctors extends Fragment {
 
     private ContatoMedicoDatabase db;
+    private int specialityId = 0;
+    private List<Doctor> doctorsList;
+    private String txtSearchSpeciality;
 
     public doctors() {
         // Required empty public constructor
@@ -70,8 +74,12 @@ public class doctors extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
         Button btnAddNewDoctor = getActivity().findViewById(R.id.btn_new_doctor);
-        fillDoctors();
-
+        try {
+            specialityId = getArguments().getInt("speciality_id");
+            fillDoctors(specialityId);
+        }catch(Exception e){
+            fillDoctors(0);
+        }
         btnAddNewDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,12 +89,14 @@ public class doctors extends Fragment {
         });
     }
 
-    private void fillDoctors(){
+    private void fillDoctors(int specialityId){
 
         GridView gridDoctors = getActivity().findViewById(R.id.gridview_doctors);
-
-        List<Doctor> doctorsList = db.doctorDao().getAll();
-
+        if(specialityId == 0) {
+            doctorsList = db.doctorDao().getAll();
+        }else{
+            doctorsList = db.doctorDao().loadAllBySpeciality(specialityId);
+        }
         doctorAdapter adapter = new doctorAdapter(getActivity(), doctorsList);
 
         gridDoctors.setAdapter(adapter);
@@ -94,13 +104,12 @@ public class doctors extends Fragment {
         gridDoctors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int cod_medico = i+1;
 
                 Doctor doctor_selected = adapter.getItem(i);
 
                 Bundle b = new Bundle();
 
-                b.putInt("doctor_id", cod_medico);
+                b.putInt("doctor_id", doctor_selected.getId());
                 b.putString("doctor_name", doctor_selected.getNome());
                 b.putString("doctor_address", doctor_selected.getEndereco());
                 b.putString("doctor_phone", doctor_selected.getTelefone());

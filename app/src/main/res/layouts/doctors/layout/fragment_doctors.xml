@@ -11,7 +11,9 @@
         <GridView
             android:id="@+id/gridview_doctors"
             android:layout_width="match_parent"
-            android:layout_height="500dp" />
+            android:layout_height="500dp"
+            android:horizontalSpacing="20dp"
+            android:numColumns="auto_fit" />
 
         <Button
             android:id="@+id/btn_new_doctor"

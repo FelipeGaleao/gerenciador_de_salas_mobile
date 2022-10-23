@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Contato Médico</string>
+    <string name="app_name">Lista de Médicos</string>
     <string name="home"> Página Inicial</string>
     <string name="doctors_page_title">Médicos</string>
     <string name="specialities_page_title">Especialidades</string>

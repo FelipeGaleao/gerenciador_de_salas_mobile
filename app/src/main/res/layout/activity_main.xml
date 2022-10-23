@@ -29,11 +29,15 @@
                 app:subtitleTextColor="#0A0A0A"
                 app:titleTextColor="#111111" />
 
-
-            <TextView
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView3"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Hello world"/>
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_home" />
+
+
             <!--    Your code here -->
 
 
