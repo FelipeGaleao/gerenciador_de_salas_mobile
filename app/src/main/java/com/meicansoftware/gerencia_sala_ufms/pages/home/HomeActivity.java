@@ -1,7 +1,9 @@
-package com.meicansoftware.gerencia_sala_ufms;
+package com.meicansoftware.gerencia_sala_ufms.pages.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.meicansoftware.gerencia_sala_ufms.R;
 
 public class HomeActivity extends AppCompatActivity {
 
