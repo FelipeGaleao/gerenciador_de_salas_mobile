@@ -20,6 +20,8 @@ import com.meicansoftware.gerencia_sala_ufms.R;
 import com.meicansoftware.gerencia_sala_ufms.pages.home.fragments.placeholder.PlaceholderContent;
 import com.meicansoftware.gerencia_sala_ufms.services.RoomService;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -68,7 +70,7 @@ public class RoomFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_item, container, false);
+        return inflater.inflate(R.layout.fragment_item_list, container, false);
 
     }
 
@@ -76,8 +78,9 @@ public class RoomFragment extends Fragment {
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        List roomsLoaded = new ArrayList();// First keep this empty.
         String rooms = null;
+        JSONObject obj = new JSONObject();
+        JSONArray jsonArray = null;
 
         RoomService roomService = new RoomService();
         try {
@@ -86,10 +89,33 @@ public class RoomFragment extends Fragment {
             rooms = "Nenhum";
             e.printStackTrace();
         }
-        // parse json to list
-//
-        // create a new adapter
-        RoomAdapter adapter = new RoomAdapter(roomsLoaded);
+
+        try {
+            jsonArray = new JSONArray(rooms);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            obj = jsonArray.getJSONObject(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        List<PlaceholderContent.PlaceholderItem> items = new ArrayList<>();
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            try {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                items.add(new PlaceholderContent.PlaceholderItem(jsonObject.getString("id"), jsonObject.getString("nome_sala") + ": " + jsonObject.getString("observacao") , "teste"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // create adapter and set it to the recycler view
+        RoomAdapter adapter = new RoomAdapter(items);
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -101,7 +127,5 @@ public class RoomFragment extends Fragment {
             }
             recyclerView.setAdapter(adapter);
         }
-        Log.d("e", rooms);
-        Toast.makeText(getActivity(), rooms, Toast.LENGTH_SHORT).show();
     }
 }
