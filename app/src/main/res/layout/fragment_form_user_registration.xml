@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".FormUserRegistration">
+
+
+    <View
+            android:id="@+id/registrationContainerComponents"
+            style="@style/RegistrationContainerComponents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="201dp"
+            android:layout_marginBottom="201dp"/>
+
+    <EditText
+            android:id="@+id/edt_first_name"
+            style="@style/LoginEditText"
+            android:hint="Nome"
+            app:layout_constraintStart_toStartOf="@id/registrationContainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/registrationContainerComponents"
+            app:layout_constraintTop_toTopOf="@id/registrationContainerComponents"
+    />
+
+    <EditText
+            android:id="@+id/edt_sir_name"
+            style="@style/LoginEditText"
+            android:hint="Último Sobrenome"
+            app:layout_constraintStart_toStartOf="@id/registrationContainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/registrationContainerComponents"
+            app:layout_constraintTop_toBottomOf="@id/edt_first_name"
+    />
+
+    <EditText
+            android:id="@+id/edt_email"
+            style="@style/LoginEditText"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/registrationContainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/registrationContainerComponents"
+            app:layout_constraintTop_toBottomOf="@id/edt_sir_name"
+    />
+
+    <EditText
+            android:id="@+id/edt_password"
+            style="@style/LoginEditText"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="@id/registrationContainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/registrationContainerComponents"
+            app:layout_constraintTop_toBottomOf="@id/edt_email"
+    />
+
+    <EditText
+            android:id="@+id/edt_capacity"
+            style="@style/LoginEditText"
+            android:hint="Locação"
+            app:layout_constraintStart_toStartOf="@id/registrationContainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/registrationContainerComponents"
+            app:layout_constraintTop_toBottomOf="@id/edt_password"
+    />
+
+    <androidx.appcompat.widget.AppCompatButton
+            style="@style/LoginButton"
+            android:text="@string/cadastrar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_capacity"
+    />
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registrationContainerComponents"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

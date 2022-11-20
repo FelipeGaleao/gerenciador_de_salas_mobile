@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".FormLogin">
+
+    <TextView
+            style="@style/LoginText"
+            android:text="@string/login"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toTopOf="@id/containerComponents"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+            android:id="@+id/containerComponents"
+            style="@style/LoginContainerComponents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="240dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="451dp"
+    />
+
+    <EditText
+            android:id="@+id/edit_email"
+            style="@style/LoginEditText"
+            android:hint="Email"
+            android:drawableRight="@drawable/ic_email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/containerComponents"
+            app:layout_constraintEnd_toEndOf="@id/containerComponents"
+            app:layout_constraintTop_toTopOf="@id/containerComponents"
+    />
+
+    <EditText
+            android:id="@+id/edit_senha"
+            style="@style/LoginEditText"
+            android:hint="Senha"
+            android:drawableRight="@drawable/ic_key"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="@id/containerComponents"
+            app:layout_constraintEnd_toEndOf="@id/containerComponents"
+            app:layout_constraintTop_toBottomOf="@id/edit_email"
+    />
+
+    <androidx.appcompat.widget.AppCompatButton
+            style="@style/LoginButton"
+            android:text="@string/entrar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_senha"
+    />
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/containerComponents"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
