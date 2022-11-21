@@ -110,6 +110,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
+                        android:paddingLeft="15dp"
                         android:text="Salas"
                         android:textColor="#FFFFFF"
                         android:textSize="24dp" />
