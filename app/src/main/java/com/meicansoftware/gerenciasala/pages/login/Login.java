@@ -15,8 +15,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
-import com.meicansoftware.gerenciasala.MainActivity;
 import com.meicansoftware.gerenciasala.R;
+import com.meicansoftware.gerenciasala.pages.home.Home;
 
 public class Login extends AppCompatActivity {
 
@@ -41,6 +41,11 @@ public class Login extends AppCompatActivity {
 
                         Intent intent = new Intent(Login.this, Login.class);
                         startActivity(intent);
+                        break;
+
+                    case  R.id.nav_home:
+                        Intent intent2 = new Intent(Login.this, Home.class);
+                        startActivity(intent2);
                         break;
                 }
                 return false;

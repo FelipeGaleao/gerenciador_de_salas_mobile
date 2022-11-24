@@ -64,7 +64,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/unimed_primary"
                     android:ems="10"
-                    android:hint="Buscar por especialidade"
+                    android:hint="Buscar por salas"
                     android:inputType="textPersonName"
                     android:padding="10dp"
                     android:shadowColor="#BF5959"
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="sans-serif-black"
-                    android:text="Especialidades"
+                    android:text="Salas"
                     android:textColor="@color/unimed_primary"
                     android:textSize="24dp" />
 

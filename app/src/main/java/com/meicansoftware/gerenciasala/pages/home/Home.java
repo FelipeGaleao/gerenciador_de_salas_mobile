@@ -1,8 +1,9 @@
-package com.meicansoftware.gerenciasala;
+package com.meicansoftware.gerenciasala.pages.home;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,25 +11,24 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
-import com.meicansoftware.gerenciasala.pages.home.Home;
+import com.meicansoftware.gerenciasala.R;
+import com.meicansoftware.gerenciasala.pages.login.Login;
 
-public class MainActivity extends AppCompatActivity {
+public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     private Button btnToggleDark;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         setUpToolbar();
 
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
@@ -37,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId())
                 {
-                    case R.id.nav_login:
+                    case  R.id.nav_login:
 
-                        Intent intent = new Intent(MainActivity.this, Home.class);
+                        Intent intent = new Intent(Home.this, Login.class);
                         startActivity(intent);
                         break;
 
+                    case  R.id.nav_home:
+                        Intent intent2 = new Intent(Home.this, Home.class);
+                        startActivity(intent2);
+                        break;
                 }
                 return false;
             }
