@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.gridlayout.widget.GridLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:columnCount="2"
+    app:rowCount="2">
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/sala_de_aula_ufms" />
+
+        <TextView
+            android:id="@+id/txt_nome_sala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:fontFamily="sans-serif-black"
+            android:text="txt_des_speciality"
+            android:textColor="@color/unimed_primary"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/txt_obs_sala"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:fontFamily="sans-serif-medium"
+            android:text="txt_des_speciality"
+            android:textColor="@color/unimed_primary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</androidx.gridlayout.widget.GridLayout>

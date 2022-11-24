@@ -100,7 +100,7 @@
                     android:textSize="24dp" />
 
                 <GridView
-                    android:id="@+id/gridview_home_specialities"
+                    android:id="@+id/gridview_home_rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"

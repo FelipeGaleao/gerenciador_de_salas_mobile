@@ -1,16 +1,23 @@
 package com.meicansoftware.gerenciasala.pages.home.fragments;
 
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.meicansoftware.gerenciasala.R;
+import com.meicansoftware.gerenciasala.services.RoomService;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,7 +55,41 @@ public class home extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
+        fillRooms();
 
+    }
 
+    private void fillRooms(){
+        GridView gridRooms = getActivity().findViewById(R.id.gridview_home_rooms);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        String strRooms = null;
+        RoomService roomService = new RoomService();
+        JSONArray jsonArray = null;
+        JSONObject obj = null;
+        try {
+            strRooms = roomService.get_rooms();
+            System.out.println(strRooms);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try{
+            jsonArray = new JSONArray(strRooms);
+        }catch(Exception e){
+            Log.e("Error", e.getMessage());
+        }
+
+        try{
+           obj = jsonArray.getJSONObject(0);
+           Log.d("e", obj.getString("id"));
+        }catch(Exception e){
+            Log.e("Error", "Ocorreu um erro!");
+        }
+
+        roomAdapter adapter = new roomAdapter(getActivity(), jsonArray);
+        gridRooms.setAdapter(adapter);
+        
+        
     }
 }
