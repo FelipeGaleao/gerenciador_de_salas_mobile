@@ -2,17 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single"
         android:id="@+id/group1">
-        <item android:id="@+id/nav_home"
+        <item android:id="@+id/nav_login"
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/home">
-        </item>
-        <item android:id="@+id/page_doctors"
-            android:icon="@drawable/ic_baseline_smartphone_24"
-            android:title="@string/doctors_page_title">
-        </item>
-        <item android:id="@+id/page_specialities"
-            android:icon="@drawable/ic_baseline_policy_24"
-            android:title="@string/specialities_page_title">
         </item>
         </group>
 

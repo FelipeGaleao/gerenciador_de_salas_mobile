@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.meicansoftware.consultamedica"
+        applicationId "com.meicansoftware.gerenciasala"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -28,9 +28,8 @@ android {
     sourceSets {
         main {
             res.srcDirs = ['src/main/res',
-                           'src/main/res/layouts/doctors',
                            'src/main/res/layouts/homepage',
-                           'src/main/res/layouts/specialities'
+                            'src/main/res/layouts/login'
             ]
         }
     }

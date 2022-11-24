@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
     android:fitsSystemWindows="true"
-    android:background="#F7FFFFFF"
+    android:background="#F7FFF0FF"
     android:minWidth="19dp">
 
     <ScrollView
@@ -30,7 +30,7 @@
                 app:titleTextColor="#111111" />
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView3"
+                android:id="@+id/fragmentContainerView2"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
