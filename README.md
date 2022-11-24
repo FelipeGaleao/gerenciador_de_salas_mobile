@@ -1,57 +1,38 @@
+# 🗺 gerenciador_de_sala_mobile 📱
 
-# Lista de Médicos
+Esse é o repositório do projeto gerenciador_de_salas, que é um projeto de gerenciamento de salas de uma universidade.
+O projeto foi desenvolvido para ser o trabalho final da disciplina de Programação para Dispositivos Móveis do curso de Engenharia de Software da Universidade Federal do Mato Grosso do Sul.
 
-Este projeto consiste em desenvolver uma App Android para listar médicos cadastrados na plataforma <br>
-O projeto deverá ser desenvolvido com o Banco de Dados Room ou SQLite.
+## 💻 Tecnologias
+Para o desenvolvimento da aplicação, foram utilizadas as seguintes tecnologias:
 
-# Screenshots
-<img src="https://github.com/FelipeGaleao/ConsultaMedica/blob/main/screenshots/screenshots.png?raw=true" height="450px">
+### ⚡ [Backend](https://github.com/FelipeGaleao/gerenciador_de_salas/tree/main/backend)
+- Python 3.9
+- Poetry (gerenciador de dependências)
+- FastAPI (Framework para o desenvolvimento da aplicação Backend)
+- Docker (Containerização)
+- MySQL (Banco de dados)
 
-# Modelagem do banco de dados 
-### ConsultaMedico
-Banco de dados implementado utilizando [Room](https://developer.android.com/jetpack/androidx/releases/room?hl=pt-br)
-### Tabela Medico
-  - int id;(chave primária-autoincrement)
-  - int idEspecialidade; (chave estrangeira)
-  - String nome;
-  - String telefone;
-  - String Endereco
+### 📱 Mobile
+Para o desenvolvimento do Mobile, foi utilizado o Android Studio para a criação do aplicativo.
 
-### Tabela Especilidade
-  - int id;;(chave primária-autoincrement)
-  - String descricao;
+[Android Studio](https://developer.android.com/studio)
 
-## Requisitos
+## 📖 Como executar o projeto?
+Para executar o projeto, é necessário ter o Docker e o Docker Compose instalados. Após instalar Docker/Docker Compose, faça o clone do repositório e execute o comando abaixo:
+```
+git clone https://github.com/FelipeGaleao/gerenciador_de_salas gerenciador_de_salas_backend
+cd gerenciador_de_salas_backend
+```
 
-### 3 De forma geral, a aplicação deve:
-- Permitir o registro de Especialidades Médicas;
-- Permitir o registro de Médicos;
-- Permitir operações como incluir, excluir e alterar dados nestas tabelas.
-- Permitir o listar as especialidades e os médicos cadastrados;
+Em sequência, será necessário executar as duas aplicações (backend e frontend) em containers separados.
+### 🐍 Backend
+Siga as instruções do README.md do backend para executar a aplicação Backend.
+[Clique aqui](https://github.com/FelipeGaleao/gerenciador_de_salas/blob/main/backend/README.md) para acessar o README.md da aplicação Backend.
 
-  #### 3.0.1 Permitir o registro de Médicos
+### 🚀 Aplicação Frontend e Backend
+Basta executar o comando na raiz do projeto para executar a aplicação:
+docker-compose up -f ./deploy/docker-compose.yml
 
-  A aplicação deve ser capaz de permitir ao usuário que ele adicione informações
-  de novos médicos. Deve-se buscar as especialidades cadastradas pela descrição
-  para listar em um spinner. Salvar o id da especialidade na tabela medico. Deve
-  permitir operações como alteração e exclusão dessas informações.
-
-  #### 3.0.2 Permitir o registro de Especialidades
-
-  A aplicação deve ser capaz de permitir ao usuário que ele adicione informações
-  de novas especialidades, assim como operações de alteração e exclusão.
-
-  #### 3.0.3 Permitir operações como incluir, excluir e alterar dados nestas tabelas.
-
-  O aplicativo deve permitir inserir, alterar ou excluir dados nas duas tabelas.
-  Sempre que for excluir uma especialidade, é preciso verificar antes se não tem
-  médico vinculado a aquela especialidade. Se tiver, ent ̃ao n ̃ao deve permitir
-  excluir a especialidade.
-
-  #### 3.0.4 Permitir o filtro para listar em um list View;
-
-  - As especialidades cadastradas
-  - Os médicos cadastrados com a respectiva especialidade 
-  - Os médicos por especialidade (permitir o filtro por especialidade)
-
-
+### 📱 Mobile
+Basta executar através do Android Studio.
