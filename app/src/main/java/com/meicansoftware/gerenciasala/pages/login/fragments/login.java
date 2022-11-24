@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.meicansoftware.gerenciasala.R;
 
@@ -49,12 +47,6 @@ public class login extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
 
-        Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_signup);
-        btnAddNewSpeciality.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(login.this).navigate(R.id.action_page_login_to_signup);
-            }
-        });
     }
+
 }

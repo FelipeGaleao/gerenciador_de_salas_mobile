@@ -54,6 +54,8 @@ dependencies {
     // optional - Guava support for Room, including Optional and ListenableFuture
     implementation "androidx.room:room-guava:$room_version"
 
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
 
