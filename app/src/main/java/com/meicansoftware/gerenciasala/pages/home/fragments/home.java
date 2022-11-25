@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
@@ -89,7 +90,14 @@ public class home extends Fragment {
 
         roomAdapter adapter = new roomAdapter(getActivity(), jsonArray);
         gridRooms.setAdapter(adapter);
-        
+
+        gridRooms.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Bundle b = new Bundle();
+                NavHostFragment.findNavController(home.this).navigate(R.id.action_page_home_to_getRoom, b);
+            }
+        });
         
     }
 }

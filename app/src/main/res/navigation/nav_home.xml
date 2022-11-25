@@ -8,5 +8,14 @@
     <fragment
         android:id="@+id/page_home"
         android:name="com.meicansoftware.gerenciasala.pages.home.fragments.home"
-        android:label="home" />
+        android:label="home" >
+        <action
+            android:id="@+id/action_page_home_to_getRoom"
+            app:destination="@id/getRoom" />
+    </fragment>
+    <fragment
+        android:id="@+id/getRoom"
+        android:name="com.meicansoftware.gerenciasala.pages.rooms.getRoomDetailed"
+        android:label="fragment_get_room"
+        tools:layout="@layout/fragment_get_room_detailed" />
 </navigation>
