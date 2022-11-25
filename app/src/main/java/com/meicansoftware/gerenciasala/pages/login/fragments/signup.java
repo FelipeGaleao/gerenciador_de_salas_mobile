@@ -50,12 +50,12 @@ public class signup extends Fragment {
 
 
 
-        Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_signup);
-        btnAddNewSpeciality.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("e", "cadastrandooo");            }
-        });
+//        Button btnAddNewSpeciality = getActivity().findViewById(R.id.btn_signup);
+//        btnAddNewSpeciality.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("e", "cadastrandooo");            }
+//        });
     }
 
 

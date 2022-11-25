@@ -2,6 +2,8 @@
     <string name="app_name">Gerencia Sala UFMS</string>
     <string name="home"> Página Inicial</string>
     <string name="app_description">Aplicativo para gestão de salas da UFMS</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="entrar">Entrar</string>
+    <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
