@@ -29,7 +29,10 @@ android {
         main {
             res.srcDirs = ['src/main/res',
                            'src/main/res/layouts/homepage',
-                            'src/main/res/layouts/login'
+                           'src/main/res/layouts/login',
+                           'src/main/res/layouts/reservations',
+                           'src/main/res/layouts/events',
+                           'src/main/res/layouts/courses'
             ]
         }
     }

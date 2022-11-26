@@ -30,6 +30,9 @@
             android:exported="false" />
         <activity android:name=".pages.home.Home"></activity>
         <activity android:name=".pages.signup.Signup"></activity>
+        <activity android:name=".pages.courses.Courses"></activity>
+        <activity android:name=".pages.reservations.Reservations"></activity>
+        <activity android:name=".pages.events.Events"></activity>
   </application>
 
 </manifest>
