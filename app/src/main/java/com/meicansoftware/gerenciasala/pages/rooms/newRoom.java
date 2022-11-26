@@ -71,29 +71,18 @@ public class newRoom extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update_room_detailed, container, false);
+        return inflater.inflate(R.layout.fragment_create_room, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
-        String arg_nome_sala = getArguments().getString("nome_sala");
-        String arg_observacao = getArguments().getString("observacao");
-        String arg_lotacao = getArguments().getString("lotacao");
-        String arg_agendavel = getArguments().getString("arg_agendavel");
-        String id_sala = getArguments().getString("id_sala");
-
-        Log.d("nome_sala", arg_nome_sala);
-
-        ImageView btn_back_room = view.findViewById(R.id.btn_back_room);
+        Button btn_back_room = view.findViewById(R.id.btn_room_back_2);
+        ImageView btn_back_room2 = view.findViewById(R.id.btn_back_room);
         TextView txt_nome_sala = view.findViewById(R.id.txt_update_nome_sala);
         TextView txt_lotacao = view.findViewById(R.id.txt_update_lotacao);
         TextView txt_observacao = view.findViewById(R.id.txt_update_observacao);
         Switch switch_agendavel = view.findViewById(R.id.switch_agendavel);
 
-        txt_nome_sala.setText(arg_nome_sala);
-        txt_lotacao.setText(arg_lotacao);
-        txt_observacao.setText(arg_observacao);
-        switch_agendavel.setChecked(Boolean.parseBoolean(arg_agendavel));
 
         Button btn_update_room = view.findViewById(R.id.btn_update_room);
 
@@ -101,9 +90,19 @@ public class newRoom extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle b = new Bundle();
-                NavHostFragment.findNavController(newRoom.this).navigate(R.id.action_updateRoom_to_page_home, b);
+                NavHostFragment.findNavController(newRoom.this).navigate(R.id.action_newRoom_to_page_home, b);
             }
         });
+
+        btn_back_room2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle b = new Bundle();
+                NavHostFragment.findNavController(newRoom.this).navigate(R.id.action_newRoom_to_page_home, b);
+            }
+        });
+
+
 
 
         btn_update_room.setOnClickListener(new View.OnClickListener() {
@@ -111,10 +110,10 @@ public class newRoom extends Fragment {
             public void onClick(View view) {
                 RoomService roomService = new RoomService();
                 try {
-                    String response = roomService.update_room(id_sala, txt_nome_sala.getText().toString(), txt_lotacao.getText().toString(), false, txt_observacao.getText().toString());
+                    String response = roomService.create_room(txt_nome_sala.getText().toString(), Integer.parseInt(txt_lotacao.getText().toString()), false, txt_observacao.getText().toString());
                     Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
                     Log.d("response_update_room", response);
-                    NavHostFragment.findNavController(newRoom.this).navigate(R.id.action_updateRoom_to_page_home);
+                    NavHostFragment.findNavController(newRoom.this).navigate(R.id.action_newRoom_to_page_home);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

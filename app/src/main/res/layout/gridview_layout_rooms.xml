@@ -15,38 +15,47 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="160dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:orientation="vertical">
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="160dp"
-            app:srcCompat="@drawable/sala_de_aula_ufms" />
+            android:layout_width="274dp"
+            android:layout_height="230dp"
+            app:srcCompat="@drawable/facom" />
 
-        <TextView
-            android:id="@+id/txt_nome_sala"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:fontFamily="sans-serif-black"
-            android:text="txt_des_speciality"
-            android:textColor="@color/unimed_primary"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/txt_obs_sala"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:fontFamily="sans-serif-medium"
-            android:text="txt_des_speciality"
-            android:textColor="@color/unimed_primary"
-            android:textSize="14sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_nome_sala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:fontFamily="sans-serif-black"
+                android:text="txt_des_speciality"
+                android:textColor="@color/blue"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_obs_sala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="txt_des_speciality"
+                android:textColor="@color/blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.gridlayout.widget.GridLayout>

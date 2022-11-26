@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_page_home_to_getRoom"
             app:destination="@id/getRoom" />
+        <action
+            android:id="@+id/action_page_home_to_newRoom"
+            app:destination="@id/newRoom" />
     </fragment>
     <fragment
         android:id="@+id/getRoom"
@@ -31,6 +34,14 @@
         android:label="updateRoom" >
         <action
             android:id="@+id/action_updateRoom_to_page_home"
+            app:destination="@id/page_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/newRoom"
+        android:name="com.meicansoftware.gerenciasala.pages.rooms.newRoom"
+        android:label="newRoom" >
+        <action
+            android:id="@+id/action_newRoom_to_page_home"
             app:destination="@id/page_home" />
     </fragment>
 </navigation>
