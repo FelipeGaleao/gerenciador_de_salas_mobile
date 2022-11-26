@@ -1,9 +1,13 @@
 package com.meicansoftware.gerenciasala.pages.rooms;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.StrictMode;
 import android.util.Log;
@@ -12,10 +16,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.meicansoftware.gerenciasala.R;
+import com.meicansoftware.gerenciasala.pages.home.fragments.home;
 import com.meicansoftware.gerenciasala.services.RoomService;
 
 /**
@@ -87,7 +93,9 @@ public class getRoomDetailed extends Fragment {
         TextView txt_nm_sala2 = view.findViewById(R.id.txt_nm_sala);
 
         Button btn_delete_room = view.findViewById(R.id.btn_delete_room);
+        Button btn_update_room = view.findViewById(R.id.btn_update_room);
 
+        ImageView btn_back_room = view.findViewById(R.id.btn_back_room);
         txt_name.setText("Você está visualizando a: " + arg_nome_sala + " " + id_sala);
 
         txt_observacao.setText("Observação: " + arg_observacao);
@@ -95,25 +103,53 @@ public class getRoomDetailed extends Fragment {
         txt_nm_sala.setText(arg_nome_sala);
         txt_agendavel.setText(arg_agendavel);
         txt_nm_sala2.setText(arg_nome_sala);
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("users_token", Context.MODE_PRIVATE);
 
         btn_delete_room.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
-                RoomService roomService = new RoomService();
+                Log.d("refresh_token", preferences.getString("access_token", ""));
+                RoomService roomService = new RoomService(preferences.getString("access_token", ""));
                 try {
+                    Toast.makeText(getActivity().getApplicationContext(), "Excluindo a sala!", Toast.LENGTH_SHORT).show();
                     String delete_msg = roomService.delete_room(id_sala);
                     Log.d("e", "deletar sala: " + id_sala);
                     Log.d("e", delete_msg);
-                    Toast.makeText(getActivity(), "Sala excluída com sucesso!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Sala excluída com sucesso!", Toast.LENGTH_SHORT).show();
+                    NavHostFragment.findNavController(getRoomDetailed.this).popBackStack();
+
                 } catch (Exception e) {
                     Log.e("Error", e.getMessage());
-                    Toast.makeText(getActivity(), "Erro ao excluir sala!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Erro ao excluir sala!", Toast.LENGTH_SHORT).show();
                 }
                 Log.d("e", "voce clicou no botao!!!");
             }
         });
+
+        btn_back_room.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(getRoomDetailed.this).popBackStack();
+            }
+        });
+
+        btn_update_room.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle b = new Bundle();
+
+                b.putString("nome_sala", arg_nome_sala);
+                b.putString("observacao", arg_observacao);
+                b.putString("lotacao", arg_lotacao);
+                b.putString("agendavel", arg_agendavel);
+                b.putString("id_sala", getArguments().getString("id_sala"));
+
+                NavHostFragment.findNavController(getRoomDetailed.this).navigate(R.id.action_getRoom_to_updateRoom, b);
+            }
+        });
+
     }
 
 }

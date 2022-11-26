@@ -25,9 +25,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F7FFFFFF"
-                app:subtitleTextColor="#0A0A0A"
-                app:titleTextColor="#111111" />
+                android:background="#0088B7"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView3"

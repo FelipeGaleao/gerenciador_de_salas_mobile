@@ -8,5 +8,13 @@
     <fragment
             android:id="@+id/page_home"
             android:name="com.meicansoftware.gerenciasala.pages.login.fragments.login"
-            android:label="login"/>
+            android:label="login">
+        <action
+            android:id="@+id/action_page_home_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.meicansoftware.gerenciasala.pages.home.fragments.home"
+        android:label="home" />
 </navigation>

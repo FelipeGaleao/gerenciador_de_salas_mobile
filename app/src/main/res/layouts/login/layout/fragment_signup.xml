@@ -8,15 +8,17 @@
         android:background="@drawable/background">
 
     <View
-            android:id="@+id/registrationContainerComponents"
-            style="@style/RegistrationContainerComponents"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="201dp"
-            android:layout_marginBottom="201dp"/>
+        android:id="@+id/registrationContainerComponents"
+        style="@style/RegistrationContainerComponents"
+        android:layout_height="450dp"
+        android:layout_marginTop="201dp"
+        android:layout_marginBottom="201dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
             android:id="@+id/edt_first_name"

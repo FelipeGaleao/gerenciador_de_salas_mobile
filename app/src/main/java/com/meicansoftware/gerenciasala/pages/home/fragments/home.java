@@ -59,6 +59,15 @@ public class home extends Fragment {
 
         fillRooms();
 
+        Button btn_new_room = view.findViewById(R.id.btn_home_novasala);
+
+        btn_new_room.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(home.this).navigate(R.id.action_page_home_to_newRoom);
+            }
+        });
+
     }
 
     private void fillRooms(){

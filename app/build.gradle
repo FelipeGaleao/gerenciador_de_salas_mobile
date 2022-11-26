@@ -32,7 +32,8 @@ android {
                            'src/main/res/layouts/login',
                            'src/main/res/layouts/reservations',
                            'src/main/res/layouts/events',
-                           'src/main/res/layouts/courses'
+                           'src/main/res/layouts/courses',
+                            'src/main/res/layouts/rooms'
             ]
         }
     }

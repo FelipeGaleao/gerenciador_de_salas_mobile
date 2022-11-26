@@ -1,7 +1,11 @@
 package com.meicansoftware.gerenciasala.pages.login.fragments;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +16,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.meicansoftware.gerenciasala.R;
+import com.meicansoftware.gerenciasala.pages.home.Home;
 import com.meicansoftware.gerenciasala.services.LoginService;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +64,7 @@ public class login extends Fragment {
         AppCompatButton btnLogin = getActivity().findViewById(R.id.btn_login);
         EditText edtEmail = getActivity().findViewById(R.id.edt_email_login);
         EditText edtPassword = getActivity().findViewById(R.id.edt_password_login);
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("users_token", Context.MODE_PRIVATE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,12 +81,34 @@ public class login extends Fragment {
                     StrictMode.setThreadPolicy(policy);
                     LoginService loginService = new LoginService();
                     String result = loginService.login(email, password);
+                    JSONObject resultObject = null;
+
+                    try {
+                        resultObject = new JSONObject(result);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                    SharedPreferences.Editor tokensToSave = preferences.edit();
+
+                    try {
+                        tokensToSave.putString("access_token", resultObject.getString("access_token"));
+                        tokensToSave.putString("refresh_token", resultObject.getString("refresh_token"));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    tokensToSave.commit();
 
                     if (result.equals("{\"message\":\"Usuário não encontrado!\"}")) {
                         Toast.makeText(getActivity(), "Email ou senha estão incorretos!", Toast.LENGTH_LONG).show();
                     }
                     else {
                         Toast.makeText(getActivity(), "Login feito!", Toast.LENGTH_LONG).show();
+                        Intent intent_home = new Intent(getActivity().getApplicationContext(), Home.class);
+                        startActivity(intent_home);
                     }
                 }
             }
