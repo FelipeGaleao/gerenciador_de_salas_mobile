@@ -21,5 +21,16 @@
         <action
             android:id="@+id/action_getRoom_to_page_home"
             app:destination="@id/page_home" />
+        <action
+            android:id="@+id/action_getRoom_to_updateRoom"
+            app:destination="@id/updateRoom" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateRoom"
+        android:name="com.meicansoftware.gerenciasala.pages.rooms.updateRoom"
+        android:label="updateRoom" >
+        <action
+            android:id="@+id/action_updateRoom_to_page_home"
+            app:destination="@id/page_home" />
     </fragment>
 </navigation>
