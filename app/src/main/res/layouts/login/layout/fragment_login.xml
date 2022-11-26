@@ -1,32 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="30dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginRight="30dp">
-
-    <LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="600dp"
+        android:background="@drawable/background">
 
-        <TextView
-            android:id="@+id/titulo_pagina"
-            android:layout_width="match_parent"
+    <TextView
+            style="@style/LoginText"
+            android:text="@string/login"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toTopOf="@id/LogincontainerComponents"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+            android:id="@+id/LogincontainerComponents"
+            style="@style/LoginContainerComponents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="240dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="451dp"
+    />
+
+    <EditText
+            android:id="@+id/edt_email_login"
+            style="@style/LoginEditText"
+            android:hint="Email"
+            android:drawableRight="@drawable/ic_email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/LogincontainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/LogincontainerComponents"
+            app:layout_constraintTop_toTopOf="@id/LogincontainerComponents"
+    />
+
+    <EditText
+            android:id="@+id/edt_password_login"
+            style="@style/LoginEditText"
+            android:hint="Senha"
+            android:drawableRight="@drawable/ic_key"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="@id/LogincontainerComponents"
+            app:layout_constraintEnd_toEndOf="@id/LogincontainerComponents"
+            app:layout_constraintTop_toBottomOf="@id/edt_email_login"
+    />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            style="@style/LoginButton"
+            android:text="@string/entrar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_password_login"
+    />
+
+    <ProgressBar
+            android:id="@+id/progressBar_login"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Médicos"
-            android:textSize="24sp" />
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LogincontainerComponents"
+    />
 
-
-        <Button
-            android:id="@+id/btn_signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#A52929"
-            android:text="Salvar médico" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
