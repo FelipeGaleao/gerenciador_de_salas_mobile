@@ -1,6 +1,7 @@
 package com.meicansoftware.gerenciasala.pages.home.fragments;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.meicansoftware.gerenciasala.R;
 
@@ -57,17 +59,9 @@ public class roomAdapter extends BaseAdapter {
         try{
             txt_name.setText(room_object.getString("nome_sala"));
             txt_obs.setText(room_object.getString("observacao"));
-            Log.d("e", room_object.getString("nome_sala"));
         }catch(Exception e){
             Log.d("e", e.getMessage());
         }
-
-        listRoomsView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("e", "Você clicou!");
-            }
-        });
 
         return listRoomsView;
     }
