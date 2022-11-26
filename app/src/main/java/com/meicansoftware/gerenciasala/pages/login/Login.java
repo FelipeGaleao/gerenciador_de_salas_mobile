@@ -16,7 +16,7 @@ import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 import com.meicansoftware.gerenciasala.R;
-import com.meicansoftware.gerenciasala.pages.home.Home;
+import com.meicansoftware.gerenciasala.pages.signup.Signup;
 
 public class Login extends AppCompatActivity {
 
@@ -43,8 +43,8 @@ public class Login extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case  R.id.nav_home:
-                        Intent intent2 = new Intent(Login.this, Home.class);
+                    case  R.id.nav_cadastrar:
+                        Intent intent2 = new Intent(Login.this, Signup.class);
                         startActivity(intent2);
                         break;
                 }
