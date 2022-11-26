@@ -29,6 +29,7 @@
             android:name=".pages.login.Login"
             android:exported="false" />
         <activity android:name=".pages.home.Home"></activity>
+        <activity android:name=".pages.signup.Signup"></activity>
   </application>
 
 </manifest>

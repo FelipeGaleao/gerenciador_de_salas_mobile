@@ -1,36 +1,33 @@
-package com.meicansoftware.gerenciasala;
+package com.meicansoftware.gerenciasala.pages.signup;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import android.view.View;
 import android.widget.Button;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
-import com.meicansoftware.gerenciasala.pages.home.Home;
+import com.meicansoftware.gerenciasala.R;
 import com.meicansoftware.gerenciasala.pages.login.Login;
 import com.meicansoftware.gerenciasala.pages.signup.Signup;
 
-public class MainActivity extends AppCompatActivity {
+public class Signup extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     private Button btnToggleDark;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_signup);
         setUpToolbar();
 
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
@@ -41,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     case  R.id.nav_login:
 
-                        Intent intent = new Intent(MainActivity.this, Login.class);
+                        Intent intent = new Intent(Signup.this, Login.class);
                         startActivity(intent);
                         break;
 
                     case  R.id.nav_cadastrar:
-                        Intent intent2 = new Intent(MainActivity.this, Signup.class);
+                        Intent intent2 = new Intent(Signup.this, Signup.class);
                         startActivity(intent2);
                         break;
                 }
