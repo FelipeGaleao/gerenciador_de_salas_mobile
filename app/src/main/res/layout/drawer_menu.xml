@@ -6,7 +6,7 @@
             android:icon="@drawable/ic_baseline_login_24"
             android:title="Login">
         </item>
-        <item android:id="@+id/nav_login"
+        <item android:id="@+id/nav_cadastrar"
             android:icon="@drawable/ic_person_add"
             android:title="Cadastrar">
         </item>
