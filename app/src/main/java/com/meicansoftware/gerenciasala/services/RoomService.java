@@ -15,7 +15,16 @@ import org.json.JSONObject;
 public class RoomService {
 
   final OkHttpClient client = new OkHttpClient();
-  String access_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk0ODgzNjgsInN1YiI6Im1heWNvbi5tb3RhQHVmbXMuYnIifQ.2ITPdH87QOuhKVNTYX5s9Ihut0KKqepgAP_b3Hksils";
+  String access_token = null;
+
+  public RoomService() {
+  }
+
+  public RoomService(String access_token) {
+    this.access_token = access_token;
+  }
+
+
   public String get_rooms() throws IOException {
     Request request = new Request.Builder()
       .url("https://gerencia-sala-backend.azurewebsites.net/api/rooms/")

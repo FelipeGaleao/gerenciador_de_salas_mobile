@@ -1,5 +1,7 @@
 package com.meicansoftware.gerenciasala.pages.rooms;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,7 +20,12 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.meicansoftware.gerenciasala.R;
 import com.meicansoftware.gerenciasala.services.RoomService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+
+import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -104,17 +111,20 @@ public class newRoom extends Fragment {
 
 
 
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("users_token", Context.MODE_PRIVATE);
 
         btn_update_room.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                RoomService roomService = new RoomService();
+                RoomService roomService = new RoomService(preferences.getString("access_token", ""));
                 try {
                     String response = roomService.create_room(txt_nome_sala.getText().toString(), Integer.parseInt(txt_lotacao.getText().toString()), false, txt_observacao.getText().toString());
-                    Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
+                    JSONObject responseObj = new JSONObject(response);
+                    Toast.makeText(getContext(), responseObj.getString("message"), Toast.LENGTH_LONG).show();
                     Log.d("response_update_room", response);
                     NavHostFragment.findNavController(newRoom.this).navigate(R.id.action_newRoom_to_page_home);
-                } catch (IOException e) {
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }
             }

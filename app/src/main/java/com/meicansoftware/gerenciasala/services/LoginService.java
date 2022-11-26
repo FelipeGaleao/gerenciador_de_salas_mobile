@@ -1,13 +1,15 @@
 package com.meicansoftware.gerenciasala.services;
 
-import android.util.Log;
 import okhttp3.*;
-import org.json.JSONObject;
+
+import org.json.JSONArray;
 
 import java.io.IOException;
 
 public class LoginService {
+
     public String login(String email, String password) {
+
         try {
             final OkHttpClient client = new OkHttpClient();
 

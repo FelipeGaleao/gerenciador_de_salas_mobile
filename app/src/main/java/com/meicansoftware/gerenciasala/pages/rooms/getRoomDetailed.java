@@ -1,5 +1,7 @@
 package com.meicansoftware.gerenciasala.pages.rooms;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -101,13 +103,15 @@ public class getRoomDetailed extends Fragment {
         txt_nm_sala.setText(arg_nome_sala);
         txt_agendavel.setText(arg_agendavel);
         txt_nm_sala2.setText(arg_nome_sala);
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("users_token", Context.MODE_PRIVATE);
 
         btn_delete_room.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
-                RoomService roomService = new RoomService();
+                Log.d("refresh_token", preferences.getString("access_token", ""));
+                RoomService roomService = new RoomService(preferences.getString("access_token", ""));
                 try {
                     Toast.makeText(getActivity().getApplicationContext(), "Excluindo a sala!", Toast.LENGTH_SHORT).show();
                     String delete_msg = roomService.delete_room(id_sala);

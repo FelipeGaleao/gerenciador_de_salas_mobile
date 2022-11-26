@@ -1,5 +1,7 @@
 package com.meicansoftware.gerenciasala.pages.rooms;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -20,6 +22,8 @@ import androidx.room.Room;
 import com.meicansoftware.gerenciasala.R;
 import com.meicansoftware.gerenciasala.services.RoomService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
@@ -109,17 +113,21 @@ public class updateRoom extends Fragment {
             }
         });
 
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("users_token", Context.MODE_PRIVATE);
+
 
         btn_update_room.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RoomService roomService = new RoomService();
+                RoomService roomService = new RoomService(preferences.getString("access_token", ""));
                 try {
                     String response = roomService.update_room(id_sala, txt_nome_sala.getText().toString(), txt_lotacao.getText().toString(), false, txt_observacao.getText().toString());
-                    Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
+                    JSONObject responseObj = new JSONObject(response);
+                    Toast.makeText(getContext(), responseObj.getString("message"), Toast.LENGTH_LONG).show();
+
                     Log.d("response_update_room", response);
                     NavHostFragment.findNavController(updateRoom.this).navigate(R.id.action_updateRoom_to_page_home);
-                } catch (IOException e) {
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }
             }
