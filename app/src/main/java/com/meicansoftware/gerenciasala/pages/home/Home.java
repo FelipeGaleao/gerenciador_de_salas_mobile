@@ -16,7 +16,11 @@ import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 import com.meicansoftware.gerenciasala.R;
+import com.meicansoftware.gerenciasala.pages.courses.Courses;
+import com.meicansoftware.gerenciasala.pages.events.Events;
 import com.meicansoftware.gerenciasala.pages.login.Login;
+import com.meicansoftware.gerenciasala.pages.reservations.Reservations;
+import com.meicansoftware.gerenciasala.pages.signup.Signup;
 
 public class Home extends AppCompatActivity {
 
@@ -43,9 +47,29 @@ public class Home extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case  R.id.nav_home:
-                        Intent intent2 = new Intent(Home.this, Home.class);
+                    case  R.id.nav_signup:
+                        Intent intent2 = new Intent(Home.this, Signup.class);
                         startActivity(intent2);
+                        break;
+
+                    case R.id.nav_courses:
+                        Intent intent3 = new Intent(Home.this, Courses.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.nav_events:
+                        Intent intent4 = new Intent(Home.this, Events.class);
+                        startActivity(intent4);
+                        break;
+
+                    case R.id.nav_reservations:
+                        Intent intent5 = new Intent(Home.this, Reservations.class);
+                        startActivity(intent5);
+                        break;
+
+                    case R.id.nav_home:
+                        Intent intent_home = new Intent(Home.this, Home.class);
+                        startActivity(intent_home);
                         break;
                 }
                 return false;

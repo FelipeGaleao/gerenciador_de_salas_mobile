@@ -6,7 +6,7 @@
             android:icon="@drawable/ic_baseline_login_24"
             android:title="Login">
         </item>
-        <item android:id="@+id/nav_cadastrar"
+        <item android:id="@+id/nav_signup"
             android:icon="@drawable/ic_person_add"
             android:title="Cadastrar">
         </item>
@@ -14,15 +14,15 @@
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/home">
         </item>
-        <item android:id="@+id/nav_home"
+        <item android:id="@+id/nav_courses"
             android:icon="@drawable/ic_baseline_schedule_24"
             android:title="Disciplinas">
         </item>
-        <item android:id="@+id/nav_home"
+        <item android:id="@+id/nav_events"
             android:icon="@drawable/ic_baseline_event_24"
             android:title="Eventos">
         </item>
-        <item android:id="@+id/nav_home"
+        <item android:id="@+id/nav_reservations"
             android:icon="@drawable/ic_baseline_event_available_24"
             android:title="Reservas">
         </item>
