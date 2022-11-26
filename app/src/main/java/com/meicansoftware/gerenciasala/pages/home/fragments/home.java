@@ -18,6 +18,7 @@ import com.meicansoftware.gerenciasala.R;
 import com.meicansoftware.gerenciasala.services.RoomService;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -95,9 +96,21 @@ public class home extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Bundle b = new Bundle();
+
+                try {
+                    JSONObject finalObj = adapter.getItem(i);
+                    b.putString("nome_sala", finalObj.getString("nome_sala"));
+                    b.putString("observacao", finalObj.getString("observacao"));
+                    b.putString("lotacao", finalObj.getString("lotacao"));
+                    b.putString("agendavel", finalObj.getString("agendavel"));
+                    b.putString("id_sala", finalObj.getString("id"));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 NavHostFragment.findNavController(home.this).navigate(R.id.action_page_home_to_getRoom, b);
             }
         });
-        
+
     }
 }

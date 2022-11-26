@@ -17,5 +17,9 @@
         android:id="@+id/getRoom"
         android:name="com.meicansoftware.gerenciasala.pages.rooms.getRoomDetailed"
         android:label="fragment_get_room"
-        tools:layout="@layout/fragment_get_room_detailed" />
+        tools:layout="@layout/fragment_get_room_detailed" >
+        <action
+            android:id="@+id/action_getRoom_to_page_home"
+            app:destination="@id/page_home" />
+    </fragment>
 </navigation>

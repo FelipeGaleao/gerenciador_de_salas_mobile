@@ -59,7 +59,6 @@ public class roomAdapter extends BaseAdapter {
         try{
             txt_name.setText(room_object.getString("nome_sala"));
             txt_obs.setText(room_object.getString("observacao"));
-            Log.d("e", room_object.getString("nome_sala"));
         }catch(Exception e){
             Log.d("e", e.getMessage());
         }
