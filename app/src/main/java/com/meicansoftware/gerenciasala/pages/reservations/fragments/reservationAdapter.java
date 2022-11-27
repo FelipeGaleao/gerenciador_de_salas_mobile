@@ -61,28 +61,20 @@ public class reservationAdapter extends BaseAdapter {
         TextView txt_date_fim = listView.findViewById(R.id.txt_data_fim);
         TextView txt_hora_inicio = listView.findViewById(R.id.txt_hora_inicio);
         TextView txt_hora_fim = listView.findViewById(R.id.txt_hora_fim);
-        TextView txt_sala = listView.findViewById(R.id.txt_nome_sala);
+        TextView txt_sala_de_aula = listView.findViewById(R.id.txt_sala_de_aula);
         TextView txt_nome_responsavel = listView.findViewById(R.id.txt_responsavel_agendamento);
         TextView txt_course_event = listView.findViewById(R.id.txt_course_event);
         JSONObject courseObject = null;
         JSONObject userObject = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            DateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-ddThh:MM:ss");
-            String dateAsString = "25/12/2010";
-            try {
-                Date date = sourceFormat.parse(dateAsString);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+        JSONObject roomObject = null;
+        JSONObject eventObject = null;
 
-        }
 
         try {
             courseObject = reservation_object.getJSONObject("course");
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        JSONObject eventObject = null;
         try {
             eventObject = reservation_object.getJSONObject("event");
         } catch (JSONException e) {
@@ -96,12 +88,22 @@ public class reservationAdapter extends BaseAdapter {
         }
 
         try{
+            roomObject = reservation_object.getJSONObject("room");
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+
+        try{
 
             txt_hora_inicio.setText(reservation_object.getString("hr_inicio_evento"));
             txt_hora_fim.setText(reservation_object.getString("hr_fim_evento"));
             txt_date_inicio.setText(reservation_object.getString("dt_inicio"));
             txt_date_fim.setText(reservation_object.getString("dt_fim"));
             txt_nome_responsavel.setText(userObject.getString("nome") + " " + userObject.getString("sobrenome"));
+
+            if(roomObject.length() > 0){
+                txt_sala_de_aula.setText(roomObject.getString("nome_sala"));
+            }
 
             if(courseObject.length() > 0){
                 Log.d("courseObject", courseObject.toString());

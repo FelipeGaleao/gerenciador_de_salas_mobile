@@ -25,9 +25,9 @@ public class ReservationService {
   }
 
 
-  public String getReservations() throws IOException {
+  public String getReservations(int offset) throws IOException {
     Request request = new Request.Builder()
-      .url("https://gerencia-sala-backend.azurewebsites.net/api/reservation/?limit=20&offset=0")
+      .url("https://gerencia-sala-backend.azurewebsites.net/api/reservation/?limit=20&offset=" + offset)
       .build();
 
     try (Response response = client.newCall(request).execute()) {
