@@ -19,97 +19,114 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:orientation="vertical">
+                android:layout_height="120dp"
+                android:background="#0088B7"
+                android:orientation="vertical"
+                android:padding="18dp">
 
                 <TextView
-                    android:id="@+id/text_name_user"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="Maycon"
-                    android:textColor="@color/unimed_primary"
-                    android:textSize="24dp" />
+                    android:text="Reservas"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28dp" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Você está visualizando todas as reservas. Para adicionar uma nova reserva, crie uma disciplina ou um evento."
+                    android:textColor="#FFFFFF"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn_back_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Saudações!"
-                    android:textColor="@color/unimed_primary"
-                    android:textSize="16dp" />
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:src="@drawable/ic_baseline_arrow_back_24" />
+
+                <TextView
+                    android:id="@+id/txt_id_sala"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="15dp"
+                    android:text="Visualizando reservas" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp">
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="32sp"
-                    android:layout_height="32sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@android:drawable/ic_menu_search" />
-
-                <EditText
-                    android:id="@+id/edt_search_speciality"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/unimed_primary"
-                    android:ems="10"
-                    android:hint="Buscar por salas"
-                    android:inputType="textPersonName"
-                    android:padding="10dp"
-                    android:shadowColor="#BF5959"
-                    android:textColor="@color/unimed_primary"
-                    android:textColorHighlight="#E62A2A"
-                    android:textColorHint="@color/unimed_primary" />
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="2"
-                    android:text="Filtrar"
-                    android:textSize="9sp" />
-
-            </LinearLayout>
+                android:layout_margin="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text_name_user2"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:fontFamily="sans-serif-black"
-                    android:text="Salas"
-                    android:textColor="@color/unimed_primary"
-                    android:textSize="24dp" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="25dp">
 
-                <GridView
-                    android:id="@+id/gridview_home_rooms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="30dp"
-                    android:layout_weight="1"
-                    android:numColumns="auto_fit"
-                    android:scrollbarAlwaysDrawHorizontalTrack="true"
-                    android:scrollbars="horizontal" >
+                    <TextView
+                        android:id="@+id/text_name_user2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Reservas"
+                        android:textColor="@color/unimed_primary"
+                        android:textSize="24dp" />
 
-                </GridView>
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Página 1. \nToque para rolar.\nPara exibir mais, use a paginação." />
+
+                    <GridView
+                        android:id="@+id/gridlayout_reservations_getAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_voltar_pag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Voltar página" />
+
+                        <Button
+                            android:id="@+id/btn_avancar_pag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="Próxima página" />
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 

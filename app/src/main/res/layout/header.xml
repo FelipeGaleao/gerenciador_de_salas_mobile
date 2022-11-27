@@ -2,25 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/ThemeOverlay.AppCompat.Dark"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:layout_height="130dp"
-    android:background="@color/white"
+    android:background="#0088B7"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingLeft="30dp"
-    android:paddingTop="45dp"
-    android:paddingRight="15dp">
+    android:padding="20dp">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        app:srcCompat="@drawable/ufms_" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:background="?android:attr/listDivider" />
+        app:srcCompat="@drawable/logo_ufms_branco" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Agendamento de Salas"
+        android:textColor="@color/white" />
+
 </LinearLayout>

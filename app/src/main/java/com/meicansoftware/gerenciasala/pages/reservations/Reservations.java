@@ -30,7 +30,7 @@ public class Reservations extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_reservations);
         setUpToolbar();
 
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
