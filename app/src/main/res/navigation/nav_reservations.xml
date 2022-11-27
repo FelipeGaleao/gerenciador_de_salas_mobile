@@ -2,46 +2,10 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_login"
-    app:startDestination="@id/page_home">
-
+    android:id="@+id/nav_reservations"
+    app:startDestination="@id/reservations">
     <fragment
-        android:id="@+id/page_home"
-        android:name="com.meicansoftware.gerenciasala.pages.home.fragments.home"
-        android:label="home" >
-        <action
-            android:id="@+id/action_page_home_to_getRoom"
-            app:destination="@id/getRoom" />
-        <action
-            android:id="@+id/action_page_home_to_newRoom"
-            app:destination="@id/newRoom" />
-    </fragment>
-    <fragment
-        android:id="@+id/getRoom"
-        android:name="com.meicansoftware.gerenciasala.pages.rooms.getRoomDetailed"
-        android:label="fragment_get_room"
-        tools:layout="@layout/fragment_get_room_detailed" >
-        <action
-            android:id="@+id/action_getRoom_to_page_home"
-            app:destination="@id/page_home" />
-        <action
-            android:id="@+id/action_getRoom_to_updateRoom"
-            app:destination="@id/updateRoom" />
-    </fragment>
-    <fragment
-        android:id="@+id/updateRoom"
-        android:name="com.meicansoftware.gerenciasala.pages.rooms.updateRoom"
-        android:label="updateRoom" >
-        <action
-            android:id="@+id/action_updateRoom_to_page_home"
-            app:destination="@id/page_home" />
-    </fragment>
-    <fragment
-        android:id="@+id/newRoom"
-        android:name="com.meicansoftware.gerenciasala.pages.rooms.newRoom"
-        android:label="newRoom" >
-        <action
-            android:id="@+id/action_newRoom_to_page_home"
-            app:destination="@id/page_home" />
-    </fragment>
+        android:id="@+id/reservations"
+        android:name="com.meicansoftware.gerenciasala.pages.reservations.fragments.reservations"
+        android:label="reservations" />
 </navigation>
