@@ -7,9 +7,11 @@
         <entry key="..\:/Users/CS342370/AndroidStudioProjects/gerencia_sala_ufms/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/CS342370/AndroidStudioProjects/gerencia_sala_ufms/app/src/main/res/layout/fragment_item.xml" value="0.2653985507246377" />
         <entry key="..\:/Users/CS342370/AndroidStudioProjects/gerencia_sala_ufms/app/src/main/res/layout/fragment_item_list.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/CS342370/Documents/Pessoal/UFMS/gerenciador_de_salas_mobile/app/src/main/res/layout/fragment_item_list.xml" value="0.1" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

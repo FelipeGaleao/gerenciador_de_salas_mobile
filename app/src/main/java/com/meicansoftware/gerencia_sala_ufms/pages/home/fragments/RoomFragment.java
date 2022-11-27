@@ -127,5 +127,9 @@ public class RoomFragment extends Fragment {
             }
             recyclerView.setAdapter(adapter);
         }
+
+        // on click recyclerView
+
+
     }
 }
