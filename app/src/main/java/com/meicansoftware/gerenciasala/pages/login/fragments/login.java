@@ -65,6 +65,7 @@ public class login extends Fragment {
         EditText edtEmail = getActivity().findViewById(R.id.edt_email_login);
         EditText edtPassword = getActivity().findViewById(R.id.edt_password_login);
         SharedPreferences preferences = this.getActivity().getSharedPreferences("users_token", Context.MODE_PRIVATE);
+        SharedPreferences userDetailsPreferences = this.getActivity().getSharedPreferences("users_detail", Context.MODE_PRIVATE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +83,7 @@ public class login extends Fragment {
                     LoginService loginService = new LoginService();
                     String result = loginService.login(email, password);
                     JSONObject resultObject = null;
+                    JSONObject userObject = null;
 
                     try {
                         resultObject = new JSONObject(result);
@@ -89,18 +91,36 @@ public class login extends Fragment {
                         e.printStackTrace();
                     }
 
+                    try{
+                        userObject = new JSONObject(resultObject.getString("user_detail"));
+                        Log.d("userObject", userObject.toString());
+
+                    }catch (Exception e){
+                        Log.d("user_login_get_details", e.getMessage());
+                    }
 
                     SharedPreferences.Editor tokensToSave = preferences.edit();
+                    SharedPreferences.Editor userToSave = userDetailsPreferences.edit();
 
                     try {
+
                         tokensToSave.putString("access_token", resultObject.getString("access_token"));
                         tokensToSave.putString("refresh_token", resultObject.getString("refresh_token"));
+                        userToSave.putString("id", userObject.getString("id"));
+                        userToSave.putString("nome", userObject.getString("nome"));
+                        userToSave.putString("sobrenome", userObject.getString("sobrenome"));
+                        userToSave.putString("tipo_usuario", userObject.getString("tipo_usuario"));
 
+                        // log all userToSave String saved
+
+                        Log.d("userToSave", userToSave.toString());
+                        
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                     tokensToSave.commit();
+                    userToSave.commit();
 
                     if (result.equals("{\"message\":\"Usuário não encontrado!\"}")) {
                         Toast.makeText(getActivity(), "Email ou senha estão incorretos!", Toast.LENGTH_LONG).show();

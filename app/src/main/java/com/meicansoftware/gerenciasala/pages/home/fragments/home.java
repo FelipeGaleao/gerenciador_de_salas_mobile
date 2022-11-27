@@ -1,5 +1,7 @@
 package com.meicansoftware.gerenciasala.pages.home.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -8,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -56,10 +60,17 @@ public class home extends Fragment {
 
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        SharedPreferences userDetailsPreferences = this.getActivity().getSharedPreferences("users_detail", Context.MODE_PRIVATE);
+        String nomeUsuarioLogado = userDetailsPreferences.getString("nome", "");
+        String idUsuarioLogado = userDetailsPreferences.getString("id", "");
+        String sobrenomeUsuarioLogado = userDetailsPreferences.getString("sobrenome", "");
 
         fillRooms();
 
         Button btn_new_room = view.findViewById(R.id.btn_home_novasala);
+        TextView txt_name_user = view.findViewById(R.id.text_name_user);
+
+        txt_name_user.setText(nomeUsuarioLogado + " " + sobrenomeUsuarioLogado);
 
         btn_new_room.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +89,7 @@ public class home extends Fragment {
         RoomService roomService = new RoomService();
         JSONArray jsonArray = null;
         JSONObject obj = null;
+
         try {
             strRooms = roomService.get_rooms();
             System.out.println(strRooms);
